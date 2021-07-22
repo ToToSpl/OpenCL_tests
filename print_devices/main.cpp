@@ -1,6 +1,12 @@
 #include <iostream>
-#include <CL/cl.hpp>
 #include <vector>
+
+#ifdef __APPLE__
+   #include <OpenCL/cl.hpp> 
+#endif
+#ifdef __linux__ 
+    #include <CL/cl.hpp>
+#endif
 
 int main()
 {

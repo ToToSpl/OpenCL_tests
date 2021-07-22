@@ -1,10 +1,19 @@
-#include <CL/cl.hpp>
 #include <iostream>
 #include <vector>
 #include <string>
 
-#define PLATFORM_INDEX 0
-#define DEVICE_INDEX 0
+#ifdef __APPLE__
+   #include <OpenCL/cl.hpp> 
+   #define PLATFORM_INDEX 0
+   #define DEVICE_INDEX 1
+#endif
+#ifdef __linux__ 
+    #include <CL/cl.hpp>
+    #define PLATFORM_INDEX 0
+    #define DEVICE_INDEX 0
+#endif
+
+
 
 int main()
 {
